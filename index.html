@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cLAWSe — Understand the fine print</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f4ef;
+      color: #20201e;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 58px 0 80px;
+    }
+
+    /* HERO */
+
+    .hero {
+      margin-bottom: 38px;
+    }
+
+    .kicker {
+      margin-bottom: 13px;
+      color: #77756f;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4.5vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      white-space: nowrap;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #62615d;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* HOW IT WORKS */
+
+    .how-it-works {
+      display: flex;
+      align-items: stretch;
+      margin: 34px 0 38px;
+      border-top: 1px solid #d9d7d0;
+      border-bottom: 1px solid #d9d7d0;
+    }
+
+    .step {
+      flex: 1;
+      padding: 15px 18px 15px 0;
+    }
+
+    .step + .step {
+      padding-left: 18px;
+      border-left: 1px solid #d9d7d0;
+    }
+
+    .step-number {
+      margin-bottom: 3px;
+      color: #99968e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .step-title {
+      color: #33322f;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .step-description {
+      margin-top: 2px;
+      color: #85837d;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    /* INPUT */
+
+    .section-label {
+      margin-bottom: 10px;
+      color: #77756f;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .document-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 13px;
+    }
+
+    .document-type {
+      padding: 5px 9px;
+      border: 1px solid #d8d6cf;
+      border-radius: 5px;
+      background: #eeece6;
+      color: #66645e;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .input-wrap {
+      overflow: hidden;
+      border: 1px solid #d4d2ca;
+      border-radius: 11px;
+      background: #fff;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 285px;
+      padding: 19px 20px;
+      border: 0;
+      outline: 0;
+      resize: vertical;
+      background: #fff;
+      color: #242422;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    textarea::placeholder {
+      color: #aaa8a2;
+    }
+
+    textarea:focus {
+      background: #fffefb;
+    }
+
+    .input-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px 15px;
+      border-top: 1px solid #e7e5df;
+      background: #faf9f6;
+    }
+
+    .hint {
+      max-width: 520px;
+      color: #88867f;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .check-button {
+      flex-shrink: 0;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 7px;
+      background: #242422;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+    }
+
+    .check-button:hover {
+      background: #3b3a36;
+    }
+
+    .check-button:active {
+      transform: translateY(1px);
+    }
+
+    .check-button:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+
+    #status {
+      min-height: 20px;
+      margin-top: 10px;
+      color: #85837c;
+      font-size: 12px;
+    }
+
+    /* RESULTS */
+
+    #results {
+      margin-top: 54px;
+    }
+
+    .summary-block {
+      margin-bottom: 36px;
+      padding: 17px 19px;
+      border-left: 3px solid #292825;
+      background: #ebe9e2;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .result-section {
+      margin-top: 34px;
+    }
+
+    .result-heading {
+      margin-bottom: 11px;
+      color: #77756f;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    /* LEGEND */
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-bottom: 13px;
+      color: #77756f;
+      font-size: 12px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+    }
+
+    .dot.red {
+      background: #d96b6b;
+    }
+
+    .dot.orange {
+      background: #df9850;
+    }
+
+    .dot.yellow {
+      background: #d4bd50;
+    }
+
+    .dot.green {
+      background: #71a979;
+    }
+
+    /* DOCUMENT */
+
+    .doc-view {
+      padding: 25px 27px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      border: 1px solid #d9d7d0;
+      border-radius: 10px;
+      background: #fff;
+      white-space: pre-wrap;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15.5px;
+      line-height: 1.85;
+    }
+
+    .doc-view mark {
+      padding: 1px 2px;
+      border-radius: 3px;
+      cursor: help;
+    }
+
+    .doc-view mark.red {
+      background: #f4c9c5;
+    }
+
+    .doc-view mark.orange {
+      background: #f6d8b6;
+    }
+
+    .doc-view mark.yellow {
+      background: #f4e8ae;
+    }
+
+    .doc-view mark.green {
+      background: #cde5d1;
+    }
+
+    /* TOOLTIP */
+
+    .legal-tooltip {
+      position: fixed;
+      z-index: 9999;
+      display: none;
+      width: min(360px, calc(100vw - 30px));
+      padding: 13px 14px 12px;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .legal-tooltip.visible {
+      display: block;
+    }
+
+    .legal-tooltip.red {
+      background: #a52e23;
+    }
+
+    .legal-tooltip.orange {
+      background: #8c5310;
+    }
+
+    .legal-tooltip.yellow {
+      background: #705d00;
+    }
+
+    .legal-tooltip.green {
+      background: #176b45;
+    }
+
+    .tooltip-label {
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tooltip-text {
+      color: #fff;
+    }
+
+    .tooltip-copy {
+      margin-top: 10px;
+      padding: 6px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      background: transparent;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tooltip-copy:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* WHAT TO CHECK */
+
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .missing-item {
+      padding: 13px 15px;
+      border: 1px solid #dedcd5;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* SPECIALISED NOTE */
+
+    .specialised-note {
+      padding: 14px 16px;
+      border-left: 3px solid #c8b36a;
+      background: #f2edda;
+      color: #625a42;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* SUGGESTED RESPONSE */
+
+    .letter-block {
+      padding: 19px;
+      border: 1px solid #dedcd5;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .letter-text {
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      color: #393834;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .copy-btn {
+      margin-top: 16px;
+      padding: 9px 13px;
+      border: 1px solid #d3d1ca;
+      border-radius: 7px;
+      background: #f4f3ef;
+      color: #33322f;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #e9e7e1;
+    }
+
+    /* HELP */
+
+    .help-section {
+      margin-top: 50px;
+      padding-top: 29px;
+      border-top: 1px solid #d9d7d0;
+    }
+
+    .help-intro {
+      max-width: 100%;
+      margin: 0 0 18px;
+      color: #696761;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .help-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 125px;
+      padding: 16px;
+      border: 1px solid #dedcd5;
+      border-radius: 9px;
+      background: #fff;
+    }
+
+    .help-card h3 {
+      margin: 0 0 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+    }
+
+    .help-card p {
+      margin: 0 0 13px;
+      color: #77756f;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .help-card a {
+      align-self: flex-start;
+      color: #242422;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .help-card a:hover {
+      color: #66635d;
+    }
+
+    /* ERROR */
+
+    .error {
+      padding: 14px 16px;
+      border: 1px solid #dfb9b9;
+      border-radius: 8px;
+      background: #fff;
+      color: #9b4848;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      color: #97958e;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .page {
+        width: min(100% - 32px, 720px);
+      }
+
+      h1 {
+        font-size: clamp(32px, 6vw, 44px);
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .page {
+        width: calc(100% - 24px);
+        padding: 40px 0 55px;
+      }
+
+      h1 {
+        font-size: 35px;
+        line-height: 1.08;
+        white-space: normal;
+      }
+
+      .hero {
+        margin-bottom: 30px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .how-it-works {
+        display: block;
+        margin: 28px 0 32px;
+      }
+
+      .step {
+        padding: 13px 0;
+      }
+
+      .step + .step {
+        padding-left: 0;
+        border-top: 1px solid #d9d7d0;
+        border-left: 0;
+      }
+
+      textarea {
+        min-height: 260px;
+        padding: 17px;
+        font-size: 15px;
+      }
+
+      .input-bottom {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 11px;
+        padding: 12px;
+      }
+
+      .hint {
+        max-width: none;
+        font-size: 11.5px;
+      }
+
+      .check-button {
+        width: 100%;
+      }
+
+      #results {
+        margin-top: 42px;
+      }
+
+      .summary-block {
+        padding: 15px 16px;
+        font-size: 13.5px;
+      }
+
+      .doc-view {
+        padding: 18px;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .legend {
+        gap: 7px 14px;
+        font-size: 11px;
+      }
+
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-tooltip {
+        width: min(330px, calc(100vw - 24px));
+      }
+    }
+
+    @media (max-width: 380px) {
+      .page {
+        width: calc(100% - 20px);
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <section class="hero">
+
+      <div class="kicker">
+        SEE WHAT YOU'RE AGREEING TO
+      </div>
+
+      <h1>
+        cLAWSe — Understand the fine print
+      </h1>
+
+      <p>
+        Paste a legal document, contract, or set of terms.
+        cLAWSe highlights clauses worth a closer look, explains
+        them in plain English, and helps you figure out what to
+        check next.
+      </p>
+
+    </section>
+
+
+    <section class="how-it-works">
+
+      <div class="step">
+
+        <div class="step-number">
+          01
+        </div>
+
+        <div class="step-title">
+          Paste it
+        </div>
+
+        <div class="step-description">
+          Add the document you're unsure about.
+        </div>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          02
+        </div>
+
+        <div class="step-title">
+          See what matters
+        </div>
+
+        <div class="step-description">
+          cLAWSe highlights clauses worth noticing.
+        </div>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          03
+        </div>
+
+        <div class="step-title">
+          Know what to do next
+        </div>
+
+        <div class="step-description">
+          Get questions to raise and places to seek help.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <div class="section-label">
+        WHAT CAN I CHECK?
+      </div>
+
+      <div class="document-types">
+
+        <span class="document-type">
+          Consumer contracts
+        </span>
+
+        <span class="document-type">
+          Terms &amp; conditions
+        </span>
+
+        <span class="document-type">
+          Employment documents
+        </span>
+
+        <span class="document-type">
+          Tenancy agreements
+        </span>
+
+        <span class="document-type">
+          Privacy policies
+        </span>
+
+        <span class="document-type">
+          Subscription terms
+        </span>
+
+        <span class="document-type">
+          Service agreements
+        </span>
+
+        <span class="document-type">
+          Other everyday legal documents
+        </span>
+
+      </div>
+
+
+      <div class="input-wrap">
+
+        <textarea
+          id="docText"
+          placeholder="Paste your document here..."
+          aria-label="Legal document"
+        ></textarea>
+
+
+        <div class="input-bottom">
+
+          <div class="hint">
+            Paste the whole document or just the section you're unsure about.
+          </div>
+
+          <button
+            id="goBtn"
+            class="check-button"
+            type="button"
+          >
+            Check this document
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="status"
+        aria-live="polite"
+      ></div>
+
+    </section>
+
+
+    <section id="results"></section>
+
+  </main>
+
+
+  <div
+    id="legalTooltip"
+    class="legal-tooltip"
+    role="tooltip"
+  >
+
+    <div
+      id="tooltipLabel"
+      class="tooltip-label"
+    ></div>
+
+    <div
+      id="tooltipText"
+      class="tooltip-text"
+    ></div>
+
+    <button
+      id="tooltipCopy"
+      class="tooltip-copy"
+      type="button"
+    >
+      Copy explanation
+    </button>
+
+  </div>
+
+
+  <script>
+    const docText =
+      document.getElementById("docText");
+
+    const goBtn =
+      document.getElementById("goBtn");
+
+    const statusEl =
+      document.getElementById("status");
+
+    const resultsEl =
+      document.getElementById("results");
+
+    const tooltip =
+      document.getElementById("legalTooltip");
+
+    const tooltipLabel =
+      document.getElementById("tooltipLabel");
+
+    const tooltipText =
+      document.getElementById("tooltipText");
+
+    const tooltipCopy =
+      document.getElementById("tooltipCopy");
+
+    let activeExplanation = "";
+    let hideTooltipTimer = null;
+
+
+    /* -----------------------------
+       TEXT HELPERS
+    ----------------------------- */
+
+    function escapeHtml(value) {
+      const div =
+        document.createElement("div");
+
+      div.textContent =
+        String(value ?? "");
+
+      return div.innerHTML;
+    }
+
+
+    function normaliseDocument(text) {
+      return String(text || "")
+        .replace(/\r\n?/g, "\n")
+        .replace(/\uFEFF/g, "")
+        .replace(/\u00A0/g, " ")
+        .split("\n")
+        .map(line =>
+          line
+            .replace(/[ \t]+/g, " ")
+            .trim()
+        )
+        .join("\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+    }
+
+
+    function cleanLetter(text) {
+      let cleaned =
+        normaliseDocument(text);
+
+      if (!cleaned) {
+        return "";
+      }
+
+      const signOffIndex =
+        cleaned
+          .toLowerCase()
+          .indexOf("best regards");
+
+      if (signOffIndex !== -1) {
+        cleaned =
+          cleaned
+            .slice(0, signOffIndex)
+            .trim();
+      }
+
+      return `${cleaned}\n\nBest regards,\n[Your Name]`;
+    }
+
+
+
+    function toTitleCase(text) {
+      return String(text || "")
+        .toLowerCase()
+        .replace(/\b\w/g, char =>
+          char.toUpperCase()
+        );
+    }
+
+
+    /* -----------------------------
+       HIGHLIGHT MATCHING
+    ----------------------------- */
+
+    function createSearchMap(text) {
+      let normalised = "";
+      const map = [];
+      let previousWasSpace = false;
+
+      for (
+        let i = 0;
+        i < text.length;
+        i++
+      ) {
+        const char = text[i];
+
+        if (char === "\n") {
+          normalised += "\n";
+          map.push(i);
+          previousWasSpace = false;
+          continue;
+        }
+
+        if (
+          char === " " ||
+          char === "\t"
+        ) {
+          if (!previousWasSpace) {
+            normalised += " ";
+            map.push(i);
+            previousWasSpace = true;
+          }
+
+          continue;
+        }
+
+        normalised += char;
+        map.push(i);
+        previousWasSpace = false;
+      }
+
+      return {
+        text: normalised,
+        map
+      };
+    }
+
+
+    function normaliseQuote(text) {
+      return String(text || "")
+        .replace(/\r\n?/g, "\n")
+        .replace(/\u00A0/g, " ")
+        .split("\n")
+        .map(line =>
+          line
+            .replace(/[ \t]+/g, " ")
+            .trim()
+        )
+        .join("\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+    }
+
+
+    function findQuoteRange(
+      documentText,
+      quote,
+      usedRanges
+    ) {
+      const normalisedQuote =
+        normaliseQuote(quote);
+
+      if (!normalisedQuote) {
+        return null;
+      }
+
+      const search =
+        createSearchMap(documentText);
+
+      const start =
+        search.text.indexOf(
+          normalisedQuote
+        );
+
+      if (start === -1) {
+        return null;
+      }
+
+      const end =
+        start +
+        normalisedQuote.length;
+
+      const overlaps =
+        usedRanges.some(range =>
+          start < range.normalisedEnd &&
+          end > range.normalisedStart
+        );
+
+      if (overlaps) {
+        return null;
+      }
+
+      const sourceStart =
+        search.map[start];
+
+      const sourceEnd =
+        search.map[end - 1];
+
+      if (
+        sourceStart === undefined ||
+        sourceEnd === undefined
+      ) {
+        return null;
+      }
+
+      return {
+        start: sourceStart,
+        end: sourceEnd + 1,
+        normalisedStart: start,
+        normalisedEnd: end
+      };
+    }
+
+
+    function buildHighlightHtml(
+      documentText,
+      flags
+    ) {
+      const source =
+        normaliseDocument(documentText);
+
+      const ranges = [];
+      const usedRanges = [];
+
+      for (const flag of flags) {
+
+        const range =
+          findQuoteRange(
+            source,
+            flag.quote,
+            usedRanges
+          );
+
+        if (!range) {
+          continue;
+        }
+
+        ranges.push({
+          ...range,
+          severity: flag.severity,
+          explanation: flag.explanation,
+          right: flag.right
+        });
+
+        usedRanges.push(range);
+      }
+
+
+      ranges.sort(
+        (a, b) =>
+          a.start - b.start
+      );
+
+
+      const accepted = [];
+
+      for (const range of ranges) {
+
+        const overlaps =
+          accepted.some(existing =>
+            range.start < existing.end &&
+            range.end > existing.start
+          );
+
+        if (!overlaps) {
+          accepted.push(range);
+        }
+      }
+
+
+      let html = "";
+      let cursor = 0;
+
+
+      for (const item of accepted) {
+
+        html += escapeHtml(
+          source.slice(
+            cursor,
+            item.start
+          )
+        );
+
+
+        const explanation = [
+          item.explanation,
+          item.right
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+
+        /*
+          IMPORTANT:
+          Do not put indentation/newlines around
+          the <mark> element.
+
+          .doc-view uses white-space: pre-wrap,
+          so whitespace inside this template literal
+          would become visible spacing in the document.
+        */
+
+        html +=
+          `<mark class="${escapeHtml(item.severity)}" data-explanation="${escapeHtml(explanation)}">${escapeHtml(source.slice(item.start, item.end))}</mark>`;
+
+
+        cursor = item.end;
+      }
+
+
+      html += escapeHtml(
+        source.slice(cursor)
+      );
+
+      return html;
+    }
+
+
+    /* -----------------------------
+       TOOLTIP
+    ----------------------------- */
+
+    const severityLabels = {
+      red: "Worth questioning",
+      orange: "Worth checking",
+      yellow: "Worth noting",
+      green: "Worth knowing"
+    };
+
+
+    function hideTooltip() {
+      tooltip.classList.remove(
+        "visible",
+        "red",
+        "orange",
+        "yellow",
+        "green"
+      );
+
+      activeExplanation = "";
+    }
+
+
+    function scheduleTooltipHide() {
+      clearTimeout(
+        hideTooltipTimer
+      );
+
+      hideTooltipTimer =
+        setTimeout(
+          hideTooltip,
+          180
+        );
+    }
+
+
+    function showTooltip(mark) {
+
+      clearTimeout(
+        hideTooltipTimer
+      );
+
+      activeExplanation =
+        mark.dataset.explanation || "";
+
+      if (!activeExplanation) {
+        return;
+      }
+
+
+      const severity =
+        mark.classList.contains("red")
+          ? "red"
+          : mark.classList.contains("orange")
+            ? "orange"
+            : mark.classList.contains("green")
+              ? "green"
+              : "yellow";
+
+
+      tooltipLabel.textContent =
+        severityLabels[severity];
+
+      tooltipText.textContent =
+        activeExplanation;
+
+
+      tooltip.classList.remove(
+        "red",
+        "orange",
+        "yellow",
+        "green"
+      );
+
+      tooltip.classList.add(
+        severity,
+        "visible"
+      );
+
+
+      const rect =
+        mark.getBoundingClientRect();
+
+
+      const width =
+        Math.min(
+          360,
+          window.innerWidth - 30
+        );
+
+
+      let left =
+        rect.left +
+        rect.width / 2 -
+        width / 2;
+
+
+      left = Math.max(
+        12,
+        Math.min(
+          left,
+          window.innerWidth -
+            width -
+            12
+        )
+      );
+
+
+      const height =
+        tooltip.offsetHeight;
+
+
+      let top =
+        rect.bottom + 10;
+
+
+      if (
+        top + height >
+        window.innerHeight - 12
+      ) {
+        top =
+          rect.top -
+          height -
+          10;
+      }
+
+
+      top =
+        Math.max(12, top);
+
+
+      tooltip.style.width =
+        `${width}px`;
+
+      tooltip.style.left =
+        `${left}px`;
+
+      tooltip.style.top =
+        `${top}px`;
+    }
+
+
+    function attachTooltips() {
+
+      document
+        .querySelectorAll(".doc-view mark")
+        .forEach(mark => {
+
+          mark.addEventListener(
+            "mouseenter",
+            () =>
+              showTooltip(mark)
+          );
+
+          mark.addEventListener(
+            "mouseleave",
+            scheduleTooltipHide
+          );
+
+        });
+    }
+
+
+    tooltip.addEventListener(
+      "mouseenter",
+      () =>
+        clearTimeout(
+          hideTooltipTimer
+        )
+    );
+
+
+    tooltip.addEventListener(
+      "mouseleave",
+      scheduleTooltipHide
+    );
+
+
+    tooltipCopy.addEventListener(
+      "click",
+      async () => {
+
+        if (!activeExplanation) {
+          return;
+        }
+
+        try {
+
+          await navigator.clipboard.writeText(
+            activeExplanation
+          );
+
+          tooltipCopy.textContent =
+            "Copied!";
+
+        } catch {
+
+          tooltipCopy.textContent =
+            "Copy failed";
+
+        }
+
+        setTimeout(() => {
+
+          tooltipCopy.textContent =
+            "Copy explanation";
+
+        }, 1500);
+
+      }
+    );
+
+
+    /* -----------------------------
+       HELP
+    ----------------------------- */
+
+    function helpSectionHtml() {
+
+      return `
+        <section class="help-section">
+
+          <div class="result-heading">
+            NEED MORE HELP?
+          </div>
+
+          <p class="help-intro">
+            cLAWSe can help you understand a document and identify
+            questions to raise. If you need advice about your
+            specific situation, these Singapore resources can
+            help you find the right place to go next.
+          </p>
+
+          <div class="help-grid">
+
+            <div class="help-card">
+
+              <div>
+
+                <h3>
+                  Singapore Courts
+                </h3>
+
+                <p>
+                  Legal-help information, self-help guides and
+                  resources for people dealing with court matters.
+                </p>
+
+              </div>
+
+              <a
+                href="https://www.judiciary.gov.sg/legal-help-support"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Singapore Courts →
+              </a>
+
+            </div>
+
+
+            <div class="help-card">
+
+              <div>
+
+                <h3>
+                  Find a lawyer
+                </h3>
+
+                <p>
+                  Find lawyers and law practices through the
+                  Law Society of Singapore.
+                </p>
+
+              </div>
+
+              <a
+                href="https://www.lawsociety.org.sg/find-a-lawyer/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find a lawyer →
+              </a>
+
+            </div>
+
+
+            <div class="help-card">
+
+              <div>
+
+                <h3>
+                  Legal Aid Bureau
+                </h3>
+
+                <p>
+                  Information about legal aid and related
+                  legal assistance.
+                </p>
+
+              </div>
+
+              <a
+                href="https://lab.mlaw.gov.sg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Legal Aid Bureau →
+              </a>
+
+            </div>
+
+
+            <div class="help-card">
+
+              <div>
+
+                <h3>
+                  Law Society / Pro Bono SG
+                </h3>
+
+                <p>
+                  Information about pro bono legal assistance
+                  and other support for members of the public.
+                </p>
+
+              </div>
+
+              <a
+                href="https://www.lawsociety.org.sg/contact-us/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find legal help →
+              </a>
+
+            </div>
+
+          </div>
+
+        </section>
+      `;
+    }
+
+
+    /* -----------------------------
+       RESULTS
+    ----------------------------- */
+
+    function renderResults(
+      data,
+      documentText
+    ) {
+
+      const flags =
+        Array.isArray(data.flags)
+          ? data.flags
+          : [];
+
+
+      const missing =
+        Array.isArray(data.missing)
+          ? data.missing
+          : [];
+
+
+      const documentHtml =
+        buildHighlightHtml(
+          documentText,
+          flags
+        );
+
+
+      const checksHtml =
+        missing
+          .map(item =>
+            `<div class="missing-item">${escapeHtml(item)}</div>`
+          )
+          .join("");
+
+
+      const letter =
+        cleanLetter(data.letter);
+
+
+      const specialisedNote =
+        typeof data.specialisedNote === "string"
+          ? data.specialisedNote.trim()
+          : "";
+
+
+      resultsEl.innerHTML = `
+
+        <div class="summary-block">
+
+          <strong>
+            ${escapeHtml(
+              toTitleCase(
+                data.documentType ||
+                "Everyday legal document"
+              )
+            )}
+          </strong>
+
+          —
+
+          ${escapeHtml(
+            data.summary || ""
+          )}
+
+        </div>
+
+
+        <div class="result-section">
+
+          <div class="result-heading">
+            THE DOCUMENT, ANNOTATED
+          </div>
+
+          <div class="legend">
+
+            <div class="legend-item">
+              <i class="dot red"></i>
+              Worth questioning
+            </div>
+
+            <div class="legend-item">
+              <i class="dot orange"></i>
+              Worth checking
+            </div>
+
+            <div class="legend-item">
+              <i class="dot yellow"></i>
+              Worth noting
+            </div>
+
+            <div class="legend-item">
+              <i class="dot green"></i>
+              Worth knowing
+            </div>
+
+          </div>
+
+          <div class="doc-view">${documentHtml}</div>
+
+        </div>
+
+
+        ${
+          checksHtml
+            ? `
+              <div class="result-section">
+
+                <div class="result-heading">
+                  WHAT TO CHECK
+                </div>
+
+                <div class="check-list">
+                  ${checksHtml}
+                </div>
+
+              </div>
+            `
+            : ""
+        }
+
+
+        ${
+          specialisedNote
+            ? `
+              <div class="result-section">
+
+                <div class="result-heading">
+                  SPECIALISED CONTENT
+                </div>
+
+                <div class="specialised-note">
+                  ${escapeHtml(specialisedNote)}
+                </div>
+
+              </div>
+            `
+            : ""
+        }
+
+
+        ${
+          letter
+            ? `
+              <div class="result-section">
+
+                <div class="result-heading">
+                  SUGGESTED RESPONSE
+                </div>
+
+                <div class="letter-block">
+
+                  <div
+                    id="letterText"
+                    class="letter-text"
+                  ></div>
+
+                  <button
+                    id="copyBtn"
+                    class="copy-btn"
+                    type="button"
+                  >
+                    Copy response
+                  </button>
+
+                </div>
+
+              </div>
+            `
+            : ""
+        }
+
+
+        ${helpSectionHtml()}
+
+
+        <div class="disclaimer">
+          cLAWSe provides AI-generated information for general
+          guidance and is not a substitute for legal advice.
+          It does not determine whether a document or clause is
+          legally valid or enforceable. For advice about your
+          specific situation, consult a qualified professional.
+        </div>
+
+      `;
+
+
+      attachTooltips();
+
+
+      if (letter) {
+
+        document.getElementById(
+          "letterText"
+        ).textContent = letter;
+
+
+        document.getElementById(
+          "copyBtn"
+        ).addEventListener(
+          "click",
+          async event => {
+
+            const button =
+              event.currentTarget;
+
+            try {
+
+              await navigator.clipboard.writeText(
+                letter
+              );
+
+              button.textContent =
+                "Copied!";
+
+            } catch {
+
+              button.textContent =
+                "Copy failed";
+
+            }
+
+            setTimeout(() => {
+
+              button.textContent =
+                "Copy response";
+
+            }, 1500);
+
+          }
+        );
+      }
+    }
+
+
+    /* -----------------------------
+       ANALYSIS REQUEST
+    ----------------------------- */
+
+    async function analyzeDocument() {
+
+      const documentText =
+        normaliseDocument(
+          docText.value
+        );
+
+
+      if (!documentText) {
+
+        statusEl.textContent =
+          "Paste some text first.";
+
+        return;
+      }
+
+
+      goBtn.disabled = true;
+
+      statusEl.textContent =
+        "Reading the document…";
+
+      resultsEl.innerHTML = "";
+
+
+      try {
+
+        const response =
+          await fetch(
+            "/api/analyze",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+                documentText
+              })
+            }
+          );
+
+
+        let data = null;
+
+        try {
+
+          data =
+            await response.json();
+
+        } catch {
+
+          data = null;
+
+        }
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            data?.error ||
+            "Unable to analyse the document."
+          );
+
+        }
+
+
+        renderResults(
+          data,
+          documentText
+        );
+
+        statusEl.textContent = "";
+
+
+      } catch (error) {
+
+        console.error(
+          "cLAWSe error:",
+          error
+        );
+
+
+        resultsEl.innerHTML = `
+
+          <div class="error">
+
+            <strong>
+              We couldn't analyse this document.
+            </strong>
+
+            <br>
+
+            ${escapeHtml(
+              error.message ||
+              "Please try again."
+            )}
+
+          </div>
+
+        `;
+
+        statusEl.textContent = "";
+
+      } finally {
+
+        goBtn.disabled = false;
+
+      }
+    }
+
+
+    goBtn.addEventListener(
+      "click",
+      analyzeDocument
+    );
+
+
+    docText.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          (event.ctrlKey ||
+            event.metaKey) &&
+          event.key === "Enter"
+        ) {
+          analyzeDocument();
+        }
+
+      }
+    );
+  </script>
+
+</body>
+</html>
