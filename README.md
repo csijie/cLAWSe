@@ -88,4 +88,4 @@ Improvements could include:
  - Better handling of complex document structures and formatting, including support for PDF and DOCX files
  - A sidebar providing an overview of the document structure, making it easier for users to navigate and find the information they need
  - More relevant legal resources recommended based on the issues identified in the legal document
- - Evaluation of the reliability of AI-generated responses 
+ - Evaluation of the reliability and accuracy of AI-generated responses
