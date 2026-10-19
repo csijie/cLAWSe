@@ -1,6 +1,8 @@
 # cLAWSe
 cLAWSe highlights clauses worth a closer look, explains them in plain English, and helps everyday people figure out what to check next when dealing with legal documents and complex jargon. 
 
+Live Demo: https://c-laws-e.vercel.app/
+
 ## Inspiration
 
 We encounter legal documents more often than we think in our everyday lives. Think employment contracts, tenancy agreements, subscription terms, privacy policies, and more. All the fine print can carry more weight than we realise. Yet, the University of Law has found that more than two-thirds of people either do not read or do not understand contracts they sign.
